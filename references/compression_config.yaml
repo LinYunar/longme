@@ -1,0 +1,9 @@
+# LongMe 压缩配置补丁
+# 覆盖 ~/.hermes/config.yaml 中的 compression 段
+# 重启 gateway 后生效
+
+compression:
+  enabled: true
+  threshold: 0.3        # 原 0.5，30% 就提前压缩，避免紧急压缩
+  target_ratio: 0.35    # 原 0.2，压缩后保留 35% 内容
+  protect_last_n: 20    # 保护最近 20 条消息不被压缩
